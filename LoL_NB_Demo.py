@@ -23,6 +23,7 @@ features = df.columns.values.tolist()
 # ===================================================================
 
 # create train/test subsets
+np.random.seed(2)
 mask = np.random.rand(len(df)) < 0.8
 train = df[mask]
 test = df[~mask]
@@ -32,17 +33,22 @@ test = df[~mask]
 # ===================================================================
 
 P_Y = []
-P_XGivenY = []
+distributions_XGivenY = []
 
 for classtype in classes:
     class_data = df[df['blueWins'] == classtype]
     P_Y.append(len(class_data) / len(df))
 
     for x in features:
+        if x in ['blueWins', 'gameId']:
+            continue
         feature_data = class_data[x]
-        print(feature_data)
+        distributions_XGivenY.append([np.mean(feature_data), np.std(feature_data)])
 
 print(P_Y)
-print(P_XGivenY)
+print(distributions_XGivenY)
 
-# now we test
+# ===================================================================
+# model validation using test set
+# ===================================================================
+
