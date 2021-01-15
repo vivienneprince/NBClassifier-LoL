@@ -5,5 +5,5 @@ Testing Naive Bayes Classifier model on predicting League of Legends game outcom
 # Refrences:
 **Data**: https://www.kaggle.com/bobbyscience/league-of-legends-diamond-ranked-games-10-min
 
-https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c
+https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c  
 https://en.wikipedia.org/wiki/Naive_Bayes_classifier
