@@ -22,7 +22,7 @@ When given new data to classify, the algorithm will calculate the likilihoods of
   
 The class with the largest resulting likelihood is what it will predict, in other words:  
   
-![p-density-function](images/p-density-function.png)  
+![classifier](images/classifier.png)  
   
 * note in my code I use notation Y = (y1,y2,...,yj,...,yk) and X = (x1,x2,...,xi,...,xn) instead of just y or C  
 * I also took ln of each likelihood and summed instead since some values got really small
