@@ -5,8 +5,10 @@ With small adjustments, this code can be used to preform NB classification on an
 
 
 # Refrences:
-**Data**: https://www.kaggle.com/bobbyscience/league-of-legends-diamond-ranked-games-10-min
+**Data**:   
+https://www.kaggle.com/bobbyscience/league-of-legends-diamond-ranked-games-10-min  
 
+**Resources**
 https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c  
 https://en.wikipedia.org/wiki/Naive_Bayes_classifier  
 https://www.geeksforgeeks.org/naive-bayes-classifiers/  
