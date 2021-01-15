@@ -6,8 +6,27 @@ It is currently configured to predict League of Legends game outcomes using info
 
 An .arff version of the LoL data file, as well as a weka model is included in the weka test folder if you want to validate the results using weka. 
  
- 
+# About the data
 
+ 
+# Asumptions
+We assume that all relevant variables are conditionally independent given the class.  
+
+
+# How it works
+This algorithm calculates and records the mean and standard deviation for each relevant variable for each class in the training set.  
+  
+When given new data to classify, the algorithm will calculate the likilihoods of the variables taking those values given each class using the probablity density function:  
+  
+![p-density-function](images/p-density-function.png)  
+  
+The class with the largest resulting likelihood is what it will predict, in other words:  
+  
+![p-density-function](images/p-density-function.png)  
+  
+* note in my code I use notation Y = (y1,y2,...,yj,...,yk) and X = (x1,x2,...,xi,...,xn) instead of just y or C  
+* I also took ln of each likelihood and summed instead since some values got really small
+  
 
 # Refrences:
 **Data**:   
