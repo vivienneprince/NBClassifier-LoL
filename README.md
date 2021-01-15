@@ -7,7 +7,9 @@ It is currently configured to predict League of Legends game outcomes using info
 An .arff version of the LoL data file, as well as a weka model is included in the weka test folder if you want to validate the results using weka. 
  
 # About the data
-
+Class: blueWins (0 if team blue loses, and 1 if they win)  
+Omitted variables: gameID  
+The rest of the features are data about the first 10 minutes of a game, and this is what is used to predict the winner. Usually each game lasts 20-50 mintues.  
  
 # Asumptions
 We assume that all relevant variables are conditionally independent given the class.  
