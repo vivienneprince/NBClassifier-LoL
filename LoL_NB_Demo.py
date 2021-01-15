@@ -1,5 +1,5 @@
-import pandas as pd
 import numpy as np
+import pandas as pd
 
 df = pd.read_csv("high_diamond_ranked_10min.csv")
 
@@ -41,13 +41,15 @@ for classtype in classes:
 
     class_feature_distributions = []
 
-    for x in features:
-        feature_data = class_data[x]
-        class_feature_distributions.append([x, np.mean(feature_data), np.std(feature_data)])  # TODO remove x later if all good
+    for feature in features:
+        feature_data = class_data[feature]
+        class_feature_distributions.append([np.mean(feature_data), np.std(feature_data)])
 
     distributions_XGivenY.append(class_feature_distributions)
 
-distributions_XGivenY_pd = pd.DataFrame(distributions_XGivenY, columns=[features])
+# convert to pd df
+# this is in form: columns=classes, rows=features
+distributions_XGivenY = pd.DataFrame(distributions_XGivenY, columns=[features]).transpose()
 
 # ===================================================================
 # model validation using test set
@@ -64,8 +66,10 @@ def likelihood(value, mu, sigma):
 
 
 def validate_result(guess, index):
-    if guess == test['blueWins'][index]: return 1
-    else: return 0
+    if guess == test['blueWins'][index]:
+        return 1
+    else:
+        return 0
 
 
 for ind in test.index:
@@ -76,10 +80,15 @@ for ind in test.index:
 
     for classtype in classes:
 
+        class_distribution_data = distributions_XGivenY[classtype]
+
         P_xiGivenyj_array = []
 
-        for feature, feature_mu, feature_sigma in distributions_XGivenY:
+        for feature in features:
+            feature_data = class_distribution_data[feature]
             feature_value = test[feature][ind]
+            feature_mu, feature_sigma = np.concatenate(feature_data.to_numpy()).ravel()
+
             P_xiGivenyj_array.append(np.log(likelihood(feature_value, feature_mu, feature_sigma)))
 
         temp_P = np.log(P_Y[classtype]) + np.sum(P_xiGivenyj_array)
