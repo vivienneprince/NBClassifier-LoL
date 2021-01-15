@@ -37,11 +37,17 @@ distributions_XGivenY = []
 
 for classtype in classes:
     class_data = train[train['blueWins'] == classtype]
-    P_Y.append(len(class_data) / len(train))
+    P_Y.append(len(class_data) / len(train))  # get P(yj)
+
+    class_feature_distributions = []
 
     for x in features:
         feature_data = class_data[x]
-        distributions_XGivenY.append([x, np.mean(feature_data), np.std(feature_data)])
+        class_feature_distributions.append([x, np.mean(feature_data), np.std(feature_data)])  # TODO remove x later if all good
+
+    distributions_XGivenY.append(class_feature_distributions)
+
+distributions_XGivenY_pd = pd.DataFrame(distributions_XGivenY, columns=[features])
 
 # ===================================================================
 # model validation using test set
