@@ -1,4 +1,4 @@
-# Naive Bayes Classifier Demo
+# Gaussian Naive Bayes Classifier Demo
 A Naive Bayes Classifier implemented in python using only numpy and pandas packages. With small adjustments, this code can be used to preform NB classification on any dataset using only the numerical features (binary is ok). 
 
 
