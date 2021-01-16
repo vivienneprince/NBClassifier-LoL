@@ -14,7 +14,7 @@ Omitted variables: gameID
 The rest of the features are data about the first 10 minutes of a game, and this is what is used to predict the winner.    
  
 # Asumptions
-We assume that all relevant variables are conditionally independent given the class.  
+We assume that all relevant variables are conditionally independent given the class, and that they are have equal effect on the outcome.  
 
 
 # How it works
