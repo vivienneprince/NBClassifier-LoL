@@ -32,7 +32,7 @@ The class with the largest resulting likelihood is what it will predict, in othe
 * I also took ln of each likelihood and summed instead since some values got really small
   
 
-# Refrences:
+# References:
 **Data**:   
 https://www.kaggle.com/bobbyscience/league-of-legends-diamond-ranked-games-10-min  
 
