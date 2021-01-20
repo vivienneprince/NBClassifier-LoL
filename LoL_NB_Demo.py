@@ -111,5 +111,5 @@ for ind in test.index:
 
     validation_array.append(validate_result(prediction, ind))  # model validation
 
-validation_score = np.mean(validation_array)  # success rate
+validation_score = np.mean(validation_array)  # perdiction success rate. with np.rand seed = 0, success rate is ~75%
 print(validation_score)
