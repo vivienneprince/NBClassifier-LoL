@@ -2,7 +2,7 @@
 Run LoL_NB_Demo.py 
   
 # Gaussian Naive Bayes Classifier Demo
-A Naive Bayes Classifier implemented in python using only numpy and pandas packages. With small adjustments, this code can be used to preform NB classification on any dataset using only the numerical features (binary is ok). 
+Naive Bayes classifier implemented in python using numpy and pandas (+joblib parallel and tqdm) packages. With some adjustments, this code can be used to perform classification on any dataset using only numerical features (binary & multiclass). 
 
 
 It is currently configured to predict League of Legends game outcomes using information from the first 10 minutes of the game.  
