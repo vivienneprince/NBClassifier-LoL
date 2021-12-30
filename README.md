@@ -6,6 +6,9 @@ It is currently configured to predict League of Legends game outcomes using info
 
 An .arff version of the LoL data file, as well as a weka model is included in the weka test folder if you want to validate the results using weka. 
  
+# Getting started   
+Run LoL_NB_Demo.py    
+  
 # About the data
 Each game has two teams (blue, red) and generally lasts between 20-50 mintues.  
   
